@@ -8,11 +8,6 @@
   $descr= filter_var(filter_input(INPUT_POST, 'descr'), FILTER_SANITIZE_STRING);
   
   require('../lib/functions.php');
-  /*
-  $registered = insertUser($username, $pw, $email, $descr);
-  
-  $content="<br /><h1>Registration ".($registered ? "succeeded": "failed. Pick another username")."</h1>";
-  */
   $toBeEchoed= getUser($username);
   $checkExistance = isUserNameTaken($username) ? "The username is taken, please pick another username.":(isEmailRegistered($email)?"The E-Mail address is already registered.":""); 
   if(empty($checkExistance)) {

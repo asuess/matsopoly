@@ -13,9 +13,12 @@ and open the template in the editor.
   
   $content="<br/><h1>Welcome!</h1>";
   $content.="<h3>Choose one of the options below!</h3>";
-  if(isset($_SESSION["user"]) && isset($_SESSION["note"])) {
+  if(isset($_SESSION["name"]) && isset($_SESSION["descr"])) {
     $content.="<form method='post' action='lib/userdata.php'><br />";
     $content.="<input class='button' type='submit' name='goUserdata'  value='Go To Landing Page' />";
+    $content.="</form>";
+    $content.="<form method='post' action='lib/editProfile.php'><br />";
+    $content.="<input class='button' type='submit' name='goEditProfile'  value='Edit my profile' />";
     $content.="</form>";
   } else {
     $content.="<form method='post' action='lib/register.php'><br />";

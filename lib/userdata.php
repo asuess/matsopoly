@@ -4,8 +4,8 @@
   $tpl = new Template();
   
   $jumbotron="<h1>Welcome!</h1>";
-  $jumbotron.="<h2>User ".$_SESSION["user"]."</h2>";
-  $jumbotron.="<h3>Note ".$_SESSION["note"]."</h3>";
+  $jumbotron.="<h2>User ".$_SESSION["name"]."</h2>";
+  $jumbotron.="<h3>Description ".$_SESSION["descr"]."</h3>";
   $jumbotron.="<form method='post' action='../index.php'><br />";
   $jumbotron.="<input class='btn btn-primary' type='submit' name='goHome' role='button' value='Go Home' />";
   $jumbotron.="</form>";

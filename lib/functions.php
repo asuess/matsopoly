@@ -8,7 +8,7 @@
 
 /*
 function connectDB() {
-  $servername = 'mysql:dbname=webeng;host=localhost';
+  $servername = 'mysql:dbname=matsopoly;host=localhost';
   $user = 'root';
   $password = '';
   try {
@@ -57,10 +57,11 @@ function isLoginCorrect($user, $pass) {
   return password_verify($pass, $storedPw);
 }
 
-function editPw($user, $newPass) {
+function editProfile($user, $newPass, $newDescr) {
   $conn = Database::getInstance();
-  $stmt = $conn->prepare('UPDATE `users` SET `password`=:pass WHERE `name`=:user');
+  $stmt = $conn->prepare('UPDATE `users` SET `password`=:pass, `description`=:descr WHERE `name`=:user');
   $stmt->bindParam(':pass', $newPass, PDO::PARAM_STR);
+  $stmt->bindParam(':descr', $newDescr, PDO::PARAM_STR);
   $stmt->bindParam(':user', $user, PDO::PARAM_STR);
   $stmt->execute();
   $conn->close();
