@@ -1,8 +1,14 @@
 <?php
 
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 class Database extends PDO {
   private static $_instance;
-  private static $dsn = 'mysql:dbname=webeng;host=127.0.0.1';
+  private static $dsn = 'mysql:dbname=matsopoly;host=localhost';
   private static $user = "root";
   private static $password = "";
   /*

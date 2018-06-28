@@ -5,7 +5,7 @@
   session_destroy();
   $content="<br /><h1>Logout succeeded</h1>";
   $content.="<form method='post' action='../index.php'><br />";
-  $content.="<input class='button' type='submit' name='submit'  value='Zurück' />";
+  $content.="<input class='button' type='submit' name='submit'  value='ZurÃ¼ck' />";
   $content.="</form><br/>";
   
   $tpl->assign('script', '');

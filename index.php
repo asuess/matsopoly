@@ -9,9 +9,11 @@ and open the template in the editor.
   require('lib/Template.class.php');
   $tpl = new Template();
   
+  //2 Buttons->Anzeigen und Register + error message
+  
   $content="<br/><h1>Welcome!</h1>";
   $content.="<h3>Choose one of the options below!</h3>";
-  if(isset($_SESSION["id"])) {
+  if(isset($_SESSION["user"]) && isset($_SESSION["note"])) {
     $content.="<form method='post' action='lib/userdata.php'><br />";
     $content.="<input class='button' type='submit' name='goUserdata'  value='Go To Landing Page' />";
     $content.="</form>";

@@ -9,7 +9,8 @@
   if($loggedIn) {
     session_unset();
     $loggedInUser = getUser($username);
-    $_SESSION["id"]=$loggedInUser["id"];
+    $_SESSION["user"]=$loggedInUser["user"];
+    $_SESSION["note"]=$loggedInUser["note"];
     header("location:../lib/userdata.php");
   } else {
     $_SESSION["loginError"] = "Please re-enter username and password";

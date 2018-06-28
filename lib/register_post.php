@@ -4,10 +4,16 @@
   
   $username=filter_var(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
   $pw=password_hash(filter_input(INPUT_POST, 'pw'), PASSWORD_DEFAULT);
-  $email= filter_var(filter_input(INPUT_POST, 'email'), FILTER_VALIDATE_EMAIL);
-  $descr=filter_var(filter_input(INPUT_POST, 'descr', FILTER_SANITIZE_STRING));
+  $email= filter_var(filter_input(INPUT_POST, 'email'), FILTER_SANITIZE_EMAIL);
+  $descr= filter_var(filter_input(INPUT_POST, 'descr'), FILTER_SANITIZE_STRING);
   
   require('../lib/functions.php');
+  /*
+  $registered = insertUser($username, $pw, $email, $descr);
+  
+  $content="<br /><h1>Registration ".($registered ? "succeeded": "failed. Pick another username")."</h1>";
+  */
+  $toBeEchoed= getUser($username);
   $checkExistance = isUserNameTaken($username) ? "The username is taken, please pick another username.":(isEmailRegistered($email)?"The E-Mail address is already registered.":""); 
   if(empty($checkExistance)) {
     if(doesMailExist($email)) {
@@ -19,9 +25,9 @@
   } else {
     $registered = false;
   }
-  $content="<br /><h1>Registration ".($registered ? "succeeded": "failed. $checkExistance")."</h1>";
+  $content="<br /><h1> Registration ".($registered ? "succeeded": "failed. $checkExistance")."</h1>";
   $content.="<form method='post' action='../index.php'><br />";
-  $content.="<input class='button' type='submit' name='submit'  value='Zurück' />";
+  $content.="<input class='button' type='submit' name='submit'  value='ZurÃ¼ck' />";
   $content.="</form><br/>";
   $_POST = array();
   
