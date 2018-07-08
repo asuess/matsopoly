@@ -42,24 +42,6 @@ body {
     margin: 0 auto;
     width: 60%;
 }
-#spielfeld {
-    background-color: rgb(193,255,193);
-    width: 100%;
-    border: 1px solid red;
-    margin-bottom: 10%;
-}
-#spielfeld:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-}
-#spielfeld_ecke{
-    width: 14%;
-    border: 1px solid;
-}
-#spielfeld_ecke:after{
-    padding-bottom: 14%;
-}
 #navigation {
     height: 10%;
     border-top: 1px solid rgb(240,240,240);

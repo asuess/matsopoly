@@ -1,0 +1,96 @@
+#spielfeld {
+    background-color: #e5f9e0;
+	position: relative;
+	width: 800px;
+	height: 800px;
+    border: 1px solid red;
+    margin: 0 auto;
+	margin-bottom: 10%;
+	overflow: hidden;
+	font-size: 0.85em;
+}
+
+#spielfeld div[id$="Column"] {
+	height: 100%; 
+	width: 14%;
+	box-sizing: border-box;
+}
+#spielfeld #leftColumn {
+	float: left;
+	box-sizing: content-box;
+}
+#spielfeld #rightColumn {
+	float: right;
+}
+#spielfeld div[id$="Column"] .corner{
+	box-sizing: border-box;
+	width: 100%;
+	height: 14%;
+	position: relative;
+	border: 1px solid black;
+	border-bottom: 1px solid black;
+}
+#spielfeld #rightColumn .corner{
+	border-left: 1px solid black;
+	
+}
+#spielfeld div[id$="Column"] div[class*="feld"]{
+	box-sizing: border-box;
+    border: 1px solid black;
+	width: 100%;
+	height: 8%;
+	position: relative;
+}
+#spielfeld div[id$="Column"] .street_color{
+	text-decoration: none;
+	height: 15%;
+	width: 100%;
+}
+#spielfeld div[id$="Row"]{
+	box-sizing: border-box;
+	width: auto;
+	height: 14%;
+}
+#spielfeld div[id$="Row"] div:nth-child(2) {
+	 overflow:hidden;
+	word-wrap:break-word;
+}
+#spielfeld div[id$="Row"] div[class*="feld"]{
+	box-sizing: border-box;
+	border: 1px solid black;
+	height: 100%;
+	width: 8%;
+	display: inline-block;
+}
+#spielfeld #topRow {
+	top: 0;
+}
+#spielfeld #bottomRow {
+	width: auto;
+}
+#spielfeld #bottomRow div[class*="feld"]{
+	width: 8%;
+}
+#spielfeld #innerField {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 0;
+	margin-left: 14%;
+	margin-right: 14%;
+	height: 72%;
+	
+}
+#spielfeld #innerField #title {
+	font-size: 70px;
+	display: inline-block;
+	margin-top: 40%;
+	transform: rotate(-45.0deg);
+}
+.rotateNinety {
+	-moz-transform: rotate(-90.0deg);
+	-o-transform: rotate(-90.0deg);
+	-webkit-transform: rotate(-90.0deg);
+	filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.083);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+	transform: rotate(-90.0deg);
+}
