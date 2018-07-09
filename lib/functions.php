@@ -94,3 +94,51 @@ function doesMailExist($mailadress) {
   }
   return ($exist && $email===$mailadress);
 }
+
+//get the html file "mailVorlage" in String
+function getMailVorlage(){
+  //HTML-Datei laden
+  $filename="../templates/mailVorlage.html";
+  $textHTML="";
+  $bol=file_exists($filename);
+  if($bol){
+    $datei = fopen($filename, "r");
+    if($datei){
+      $textHTML=file_get_contents($filename);
+      fclose($datei);
+    }
+  }
+  return $textHTML;
+}
+
+//generate random password: https://www.w3resource.com/php-exercises/php-string-exercise-9.php
+function password_generate($length){
+  $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+  return substr(str_shuffle($data), 0, $length);
+}
+
+require_once("./SMTP-Based-Email-Validation-master/smtpvalidateclass.php");
+require_once('./PHPMailer-master/class.phpmailer.php');//send mails without using mail()-Function from php itself
+//send an email for new password
+function sendMailNewPass($email){
+  $newPass=password_hash(password_generate(15));
+  $user=getUser("", $email);
+  editProfile($user['name'], $newPass, $user['description']);
+  $textHTML=getMailVorlage();
+  $beschreibung="You may log in with this new data:<br/><br/>~Username: ".$user['name']." <br/><br/>~Password: ".$newPass;
+  $textHTML=str_replace('<!--content-->',$beschreibung,$textHTML);
+  $textHTML=str_replace('<!--title-->',"New Login Data",$textHTML);
+  $betreff="Matsopoly - New Login Data";
+  $from="matsopoly@rwth-aachen.de";
+  $absender="Content-type:text/html;charset=UTF-8\r\nFrom: ".$from."\r\n";
+  $sent=mail($email, $betreff, $textHTML, $absender);/* using mail function instead of using php mailer, because the mail is sent here in the function */
+  $mail=new PHPMailer;/* using php mailer, because the mail is sent in index.php */
+  $mail->From=$from;
+  $mail->FromName='Matsopoly';// Name is optional
+  $mail->AddAddress($email);//send to
+  $mail->Subject=$betreff;
+  $mail->Body =$textHTML;
+  $mail->IsHTML(true);
+  $mail->Send();
+  return $sent;
+}

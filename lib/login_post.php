@@ -13,7 +13,7 @@
     $_SESSION["descr"]=(empty($loggedInUser["description"])?"-":$loggedInUser["description"]);
     header("location:../lib/userdata.php");
   } else {
-    $_SESSION["loginError"] = "Please re-enter username and password";
+    $_SESSION["loginError"] = "Please re-enter the correct username and password";
     header("location:../lib/login.php");
   }
 ?>
