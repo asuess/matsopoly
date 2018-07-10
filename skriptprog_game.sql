@@ -79,9 +79,6 @@ CREATE TABLE `messages` (
 -- Daten für Tabelle `messages`
 --
 
-INSERT INTO `messages` (`id`, `from_user`, `to_user`, `unread`, `title`, `text`) VALUES
-(1, 1, 2, 1, 'tes', 'nix');
-
 -- --------------------------------------------------------
 
 --
@@ -107,13 +104,6 @@ CREATE TABLE `played_games` (
 --
 -- Daten für Tabelle `played_games`
 --
-
-INSERT INTO `played_games` (`id`, `players`, `user_id_1`, `user_id_2`, `user_id_3`, `user_id_4`, `user_id_5`, `user_id_6`, `user_id_7`, `user_id_8`, `points_earned`, `winner`, `time`) VALUES
-(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2018-06-14 08:34:18'),
-(2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2018-06-14 08:35:42'),
-(3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2018-06-14 15:14:12'),
-(4, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2018-06-14 15:20:17'),
-(5, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2018-06-14 15:20:17');
 
 -- --------------------------------------------------------
 
@@ -259,11 +249,6 @@ CREATE TABLE `users` (
 --
 -- Daten für Tabelle `users`
 --
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `description`, `points`) VALUES
-(1, 'Ab13828', 'zippy@mail.de', 'pw', 'nr1', 3),
-(2, 'Vr3221', 'joe@no.com', 'pass', 'nr2', 2),
-(3, 'Be89343', 'Last@ml.php', 'wort', 'nr3', 1);
 
 -- --------------------------------------------------------
 

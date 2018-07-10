@@ -69,3 +69,18 @@ body {
     transition: all 0.5s ease;
     color: white;
 }
+.popup-overlay {
+visibility:hidden;
+}
+
+.popup-content {
+visibility:hidden;
+}
+
+.popup-overlay.active{
+visibility:visible;
+}
+
+.popup-content.active {
+visibility:visible;
+}
