@@ -8,6 +8,8 @@
 	margin-bottom: 10%;
 	overflow: hidden;
 	font-size: 0.85em;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
 }
 
 #spielfeld div[id$="Column"] {
@@ -29,10 +31,53 @@
 	position: relative;
 	border: 1px solid black;
 	border-bottom: 1px solid black;
+	text-align: center;
+	padding-top: 30%;
+	}
 }
 #spielfeld #rightColumn .corner{
-	border-left: 1px solid black;
-	
+	border-left: 1px solid black;	
+	text-align: center;
+	padding-top: 30%;
+	}
+#spielfeld #rightColumn .street_color {
+	float: left;
+	height: 100%;
+	width: 15%;
+}
+#spielfeld #leftColumn .street_color {
+	float: right;
+	height: 100%;
+	width: 15%;
+}
+
+#spielfeld #leftColumn .streetName {
+	padding-left: 5px;
+	padding-top: 10%;
+	width: 80%;
+	height: 85%;
+	text-align: center;
+	float: left;
+	display: table-cell;
+	vertical-align: middle;
+		white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;       
+   white-space: -o-pre-wrap;      
+   word-wrap: break-word;  
+}
+#spielfeld #rightColumn .streetName {
+	float: right;
+	padding-top: 10%;
+	margin-top: 0;
+	width: 80%;
+	height: 85%;
+	text-align: center;
+		white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;       
+   white-space: -o-pre-wrap;      
+   word-wrap: break-word;  
 }
 #spielfeld div[id$="Column"] div[class*="feld"]{
 	box-sizing: border-box;
@@ -41,19 +86,10 @@
 	height: 8%;
 	position: relative;
 }
-#spielfeld div[id$="Column"] .street_color{
-	text-decoration: none;
-	height: 15%;
-	width: 100%;
-}
 #spielfeld div[id$="Row"]{
 	box-sizing: border-box;
 	width: auto;
 	height: 14%;
-}
-#spielfeld div[id$="Row"] div:nth-child(2) {
-	 overflow:hidden;
-	word-wrap:break-word;
 }
 #spielfeld div[id$="Row"] div[class*="feld"]{
 	box-sizing: border-box;
@@ -61,6 +97,7 @@
 	height: 100%;
 	width: 8%;
 	display: inline-block;
+	overflow: hidden;
 }
 #spielfeld #topRow {
 	top: 0;
@@ -68,9 +105,48 @@
 #spielfeld #bottomRow {
 	width: auto;
 }
+#spielfeld #topRow .street_color {
+	height: 14%;
+	width: 100%;
+	margin-bottom: 0;
+}
+#spielfeld #bottomRow .street_color {
+	height: 14%;
+	width: 100%;
+}
+#spielfeld #topRow .streetName {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;       
+	white-space: -o-pre-wrap;      
+	word-wrap: break-word;      
+	height: 86%;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 0;
+	padding-top: 10%;
+}
+#spielfeld #bottomRow .streetName {
+	white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;       
+   white-space: -o-pre-wrap;      
+   word-wrap: break-word;      
+	height: 86%;
+	width: 90%;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-top: 10%;
+}
 #spielfeld #bottomRow div[class*="feld"]{
 	width: 8%;
 }
+
 #spielfeld #innerField {
 	text-align: center;
 	margin: 0 auto;

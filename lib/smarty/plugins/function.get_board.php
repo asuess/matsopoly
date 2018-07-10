@@ -25,11 +25,11 @@ function smarty_function_get_board($params, &$smarty)
 		$returnString.="<div class='feld_".$i."' name='col1_field_".$i."'>";
 		$streetIndex = $i-1;
 		if(in_array($i, array(1,3))) {
-		$returnString.="<div class='street_color' style='background-color: ".$colors[0]."'></div><div>".$streetNames[$streetIndex]."</div>";
+		$returnString.="<div class='street_color' style='background-color: ".$colors[0]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else if(in_array($i, array(6,8,9))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[1]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style='background-color: ".$colors[1]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else {
-			$returnString.="<div class='street_color' style=''></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style=''></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		}
 		$returnString .="</div>";
 	}
@@ -43,11 +43,11 @@ function smarty_function_get_board($params, &$smarty)
 		$streetIndex = $i -2;
 		$returnString.="<div class='feld_".$i."' name='col1_field_".$i."'>";
 		if(in_array($i, array(19,21,22))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[2]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style='background-color: ".$colors[4]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else if(in_array($i, array(24,25,27))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[3]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style='background-color: ".$colors[5]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else {
-			$returnString.="<div class='street_color' style=''></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style=''></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		}
 		$returnString .="</div>";
 	}
@@ -61,11 +61,11 @@ function smarty_function_get_board($params, &$smarty)
 		$streetIndex = $i-1;
 		$returnString.="<div class='feld_".$i."' name='row1_field_".$i."'>";
 		if(in_array($i, array(10,12,13))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[4]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='streetName'>".$streetNames[$streetIndex]."</div><div class='street_color' style='background-color: ".$colors[2]."'></div>";
 		} else if(in_array($i, array(15,17,18))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[5]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='streetName'>".$streetNames[$streetIndex]."</div><div class='street_color' style='background-color: ".$colors[3]."'></div>";
 		} else {
-			$returnString.="<div class='street_color' style=''></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='streetName'>".$streetNames[$streetIndex]."</div><div class='street_color' style=''></div>";
 		}
 		$returnString .="</div>";
 	}
@@ -85,11 +85,11 @@ function smarty_function_get_board($params, &$smarty)
 		$streetIndex = $i-2;
 		$returnString.="<div class='feld_".$i."' name='row2_field_".$i."'>";
 		if(in_array($i, array(28,29,31))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[6]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style='background-color: ".$colors[6]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else if(in_array($i, array(34,36))) {
-			$returnString.="<div class='street_color' style='background-color: ".$colors[7]."'></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style='background-color: ".$colors[7]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		} else {
-			$returnString.="<div class='street_color' style=''></div><div>".$streetNames[$streetIndex]."</div>";
+			$returnString.="<div class='street_color' style=''></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
 		}
 		$returnString .="</div>";
 	}
