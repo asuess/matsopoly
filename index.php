@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include('C:\xampp\htdocs\matsopoly\lib\smarty\Smarty.class.php');
 
 $smarty = new Smarty;
@@ -9,6 +8,7 @@ $smarty -> setCacheDir('lib/smarty/cache');
 $smarty -> setConfigDir('lib/smarty/config');
 $smarty -> setPluginsDir('lib/smarty/plugins');
 $smarty -> setCompileDir('lib/smarty/compile');
+$smarty -> force_compile = true;
 
 $firstPara = '<p style="text-align: center">Hallo und herzlich Willkommen zu <b>Matsopoly</b> - das "etwas" andere Monopoly!</p>';
 $secondPara = '<p>In diesem Spiel erwarten dich einige bekannte Begriffe aus dem Lebensraum der Matse-Ausbildung, beginnend bei Dozenten, 

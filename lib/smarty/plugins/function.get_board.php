@@ -96,7 +96,7 @@ function smarty_function_get_board($params, &$smarty)
 	$returnString .= "</div>";
 	//ENDE UNTERE REIHE
 	
-	return $returnString."<script src='../js/getStreetView.js'></script></div>";
+	return $returnString."";
 	
 	
 }
