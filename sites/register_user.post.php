@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 include('..\lib\smarty\Smarty.class.php');
 require_once('..\lib\Database.class.php');
 $smarty = new Smarty;
@@ -37,9 +39,10 @@ $sql = "INSERT INTO users(name, email, password, points) VALUES (:name , :mail, 
 			$statement -> bindParam(":password", $pwHashed);
 			$statement -> execute();
 			$id = $conn -> lastInsertId();
-			$smarty->assign('content', "Neuen Nutzer mit Namen ".$username." und ID ".$id." angelegt!");
+			$smarty->assign('content', "<div style='text-align: center'>Neuen Nutzer mit Namen ".$username." und ID ".$id." angelegt!");
 			$smarty -> display('default_layout.tpl');
 			$_SESSION['username'] = $username;
+			$_SESSION['loggedIn'] = true;
 	}
 	}
 	

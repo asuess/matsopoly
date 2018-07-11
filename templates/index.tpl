@@ -10,7 +10,7 @@
 <div id="anmeldung">{get_login_bar}</div>
 <div id="header">
 
-    {include file='navigation.tpl'}
+    {get_navigation}
 
     <img src="../img/logo.png" alt="logo" class="img_center"/>
 </div>

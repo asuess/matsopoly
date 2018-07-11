@@ -1,14 +1,17 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 require_once('../lib/Database.class.php');
 
 if(isset($_POST['username'])) {
 	$username=filter_var(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-	$pw=password_hash(filter_input(INPUT_POST, 'password'), PASSWORD_DEFAULT);
+	$pw=filter_input(INPUT_POST, 'password');
 	
 	if(userAccepted($username, $pw)) {
 		$_SESSION['username'] = $username;
+		$_SESSION['loggedIn'] = true;
 	} else {
 		$_SESSION['loginError'] = "Login nicht erfolgreich. Username/Passwort falsch";
 	}
@@ -16,13 +19,12 @@ if(isset($_POST['username'])) {
 }
 function userAccepted($user, $pw) {
 	$conn = Database::getInstance();
-	$sql = "SELECT * FROM users where name = :name AND password = :pw";
+	$sql = "SELECT password FROM users where name = :name";
 	$statement = $conn -> prepare($sql);
 	$statement -> bindParam('name', $user);
-	$statement -> bindParam('pw', $pw);
 	$statement -> execute();
-	$user = $statement -> fetch();
-	if($user != null) {
+	$storedPw = $statement -> fetchColumn();
+	if($storedPw != null && password_verify($pw, $storedPw)) {
 		return true;
 	}
 	return false;

@@ -8,13 +8,15 @@
  * Purpose:  get contents for login bar and evaluate whether the user is logged in or not
  * -------------------------------------------------------------
  */
- session_start();
 function smarty_function_get_login_bar($params, &$smarty) {
+	if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+	}
 	echo "<script src='../js/loginMenu.js'></script>";
 	echo "<script src='../lib/jQueryUI/jquery-ui.js'></script>";
     echo "<table><tr><td>";
     if (isset($_SESSION["username"])) {
-        echo "Hallo ".$_SESSION["username"]." <a href='../sites/edit_profile.php'> Profil bearbeiten</a> | <a href='../sites/logout_user.php'>Ausloggen</a></td>";
+        echo "Hallo <span id='username'>".$_SESSION["username"]."</span> <a href='../sites/edit_profile.php'> Profil bearbeiten</a> | <a href='../sites/logout_user.php'>Ausloggen</a></td>";
     } else {
         echo "Hallo Gast! <a href='../sites/register_user.php'>Registrieren</a> /<a href='#' id='show_login'> Einloggen </a></td>";
     }

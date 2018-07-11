@@ -8,7 +8,6 @@ $smarty -> setCacheDir('lib/smarty/cache');
 $smarty -> setConfigDir('lib/smarty/config');
 $smarty -> setPluginsDir('lib/smarty/plugins');
 $smarty -> setCompileDir('lib/smarty/compile');
-$smarty -> force_compile = true;
 
 if(isset($_SESSION['loginError'])) {
 	$content .="<p style='color: red'>".$_SESSION['loginError']."!";
