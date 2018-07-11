@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-16 01:14:51
+/* Smarty version 3.1.32, created on 2018-07-11 12:12:43
   from 'C:\xampp\htdocs\matsopoly\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b24486b163521_98376255',
+  'unifunc' => 'content_5b45d81b7b08a3_40324789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a65d2f28f54fdb1b085586891f939f6d30a30937' => 
     array (
       0 => 'C:\\xampp\\htdocs\\matsopoly\\templates\\index.tpl',
-      1 => 1529104488,
+      1 => 1531219168,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navigation.tpl' => 1,
   ),
 ),false)) {
-function content_5b24486b163521_98376255 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b45d81b7b08a3_40324789 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_login_bar.php','function'=>'smarty_function_get_login_bar',),1=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_board.php','function'=>'smarty_function_get_board',),));
 ?><!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/board.css">
+	<?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
+>
    <title> Matsopoly </title>
 </head>
 <body>

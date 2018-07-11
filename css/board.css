@@ -1,4 +1,5 @@
 #spielfeld {
+	z-index: 900;
     background-color: #e5f9e0;
 	position: relative;
 	width: 800px;

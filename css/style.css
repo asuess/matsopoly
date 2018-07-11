@@ -69,18 +69,16 @@ body {
     transition: all 0.5s ease;
     color: white;
 }
-.popup-overlay {
-visibility:hidden;
-}
-
-.popup-content {
-visibility:hidden;
-}
-
-.popup-overlay.active{
-visibility:visible;
-}
-
-.popup-content.active {
-visibility:visible;
+#loginDialog{
+	background-color: #646c77;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-radius: 10px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 10%;
+	width: 300px;
+	height: 180px;
+	display: none;
+	z-index:999;
 }
