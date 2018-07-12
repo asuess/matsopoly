@@ -250,6 +250,10 @@ CREATE TABLE `users` (
 -- Daten für Tabelle `users`
 --
 
+CREATE TABLE userQueue (
+	username varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY(username)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 -- --------------------------------------------------------
 
 --
@@ -353,7 +357,6 @@ ALTER TABLE `streets`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
-
 --
 -- AUTO_INCREMENT für exportierte Tabellen
 --

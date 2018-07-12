@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-07-11 18:21:40
+/* Smarty version 3.1.32, created on 2018-07-12 12:51:35
   from 'C:\xampp\htdocs\matsopoly\templates\default_layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b462e94546232_30680602',
+  'unifunc' => 'content_5b4732b74da0d4_34859766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b462e94546232_30680602 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b4732b74da0d4_34859766 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_login_bar.php','function'=>'smarty_function_get_login_bar',),1=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_navigation.php','function'=>'smarty_function_get_navigation',),));
 ?><!DOCTYPE html>
 <html>

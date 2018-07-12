@@ -1,18 +1,16 @@
 <?php
 	session_start();
-	$filepath = '../game/userList.txt';
-	$content = getUsersFromFile($filepath);
-	if(strpos($content, $_SESSION['username']) === false) {
-		$content .= $_SESSION['username'].";";
-	}
-	echo $content;
+	echo getCurrentQueue();
 	
-	function getUsersFromFile($filepath) {
+	function getCurrentQueue() {
+	require("../lib/Database.class.php");
+	$db = Database::getInstance();
+	$statement = "SELECT * FROM userqueue";
+	$stmt = $db -> prepare($statement);
+	$stmt -> execute();
 	$content = "";
-	while(($line = fgets($file)) !== false) {
-		if(strpos($content, $line) !== false) {
-			$content .= $line.";"
-		}
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		$content .= $row['username'].";";
 	}
 	return $content;
-	}
+}

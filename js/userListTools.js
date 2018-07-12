@@ -1,41 +1,58 @@
 var username = document.getElementById('username').innerHTML;
-window.setInterval(function() {
-	if($('#'+username).length==0) {
-		addUserToVisibleQueue(username);
+
+function addUserToVisibleQueue (name) {
+	if(name !== "") {
+		document.getElementById('warteListeObj').innerHTML += "<li id='"+name+"'>"+name+"</li>";
 	}
-	var myArr = [];
-	$("#warteListeObj").each(function() {
-		myArr.push($(this).html());
+}
+function addUserToQueue(name) {
+	$.ajax({
+		url: '../game/addUserToFileQueue.php',
+		type: "POST",
+		data: {user : name},
+		cache: false,
+		dataType: 'text', //the type of data you're expecting
+		success: function(result){
+			document.getElementById('queueMessage').innerHTML = "User "+result+" in die Warteschlange hinzugefügt";
+			if(result != "") {
+				addUserToVisibleQueue(result);
+			}
+		}
 	});
-	var jsonString = JSON.stringify(myArr);
+}
+
+var intervalUsers = window.setInterval(function() {
+	if($("#warteListeObj li").length > 1) {
+		matchPossible();
+	} else {
+	document.getElementById('warteListeObj').innerHTML = "";
+	getNewUsers();
+	}
+}, 3000);
+
+function matchPossible() {
+	var opponent = "";
+	$("li").each(function(index) {
+		if($(this).text() !== username) {
+			opponent = $(this).text();
+		}
+	});
+	console.log(opponent);
+	window.location.href = "actualGame.php?op="+opponent;
+}
+function getNewUsers() {
 	$.ajax({
 		url: '../game/checkForUsers.php',
-		type: "POST",
-		data: {data : jsonString},
 		cache: false,
 		dataType: 'text', //the type of data you're expecting
 		success: function(result){
 			if(result != "") {
-				var nameArray = result.split(";");
-				nameArray.forEach(function(element) {
+				var names = result.split(";");
+				names.forEach(function(element) {
 					addUserToVisibleQueue(element);
 				});
 			}
 		}
 	});
-}, 1000);
-window.addEventListener('unload', function(e) {
-	$.ajax({
-    url: '../game/deleteUserFromQueue.php',
-    dataType: 'text', //the type of data you're expecting
-    success: function(result){
-	}
-	
-	});
-	return null;
-});
-
-	
-function addUserToVisibleQueue(name) {
-	 document.getElementById('warteListeObj').innerHTML += "<li id='"+name+"'>"+name+"</li>";
 }
+addUserToQueue(username);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-07-12 12:51:40
-  from 'C:\xampp\htdocs\matsopoly\templates\index.tpl' */
+/* Smarty version 3.1.32, created on 2018-07-12 12:57:59
+  from 'C:\xampp\htdocs\matsopoly\templates\game.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b4732bce27283_37801266',
+  'unifunc' => 'content_5b473437a62304_65886311',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a65d2f28f54fdb1b085586891f939f6d30a30937' => 
+    'e20df172d5ee4e0c40c1481d9ce5ad297b6baa60' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\matsopoly\\templates\\index.tpl',
-      1 => 1531306285,
+      0 => 'C:\\xampp\\htdocs\\matsopoly\\templates\\game.tpl',
+      1 => 1531390040,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b4732bce27283_37801266 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b473437a62304_65886311 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_login_bar.php','function'=>'smarty_function_get_login_bar',),1=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_navigation.php','function'=>'smarty_function_get_navigation',),2=>array('file'=>'C:\\xampp\\htdocs\\matsopoly\\lib\\smarty\\plugins\\function.get_board.php','function'=>'smarty_function_get_board',),));
 ?><!DOCTYPE html>
 <html>
@@ -35,15 +35,25 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\matsopoly
 <body>
 <div id="anmeldung"><?php echo smarty_function_get_login_bar(array(),$_smarty_tpl);?>
 </div>
+<?php echo '<script'; ?>
+>
+$("#standardTextFeld ul li").each(function(index) {
+		if($(this).text() === "Spiel Starten") {
+			$(this).remove();
+		}
+	});
+<?php echo '</script'; ?>
+>
 <div id="header">
-
     <?php echo smarty_function_get_navigation(array(),$_smarty_tpl);?>
-
 
     <img src="../img/logo.png" alt="logo" class="img_center"/>
 </div>
+</div>
 <div id="content">
-    <div id="standardTextfeld">
+    <div id="spieler_ansicht">DUMMY</div>
+	</div id="gegner_ansicht">DUMMY</div>
+	<br>
     <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
 
     </div>
