@@ -40,7 +40,7 @@ function smarty_function_get_board($params, &$smarty)
 	//RECHTE SPALTE
 	$returnString.="<div id='rightColumn'><div class='corner' name='corner_PARKING'>PARKING</div>";
 	for($i = 19; $i < 28; $i++) {
-		$streetIndex = $i -2;
+		$streetIndex = $i -1;
 		$returnString.="<div class='feld_".$i."' name='col1_field_".$i."'>";
 		if(in_array($i, array(19,21,22))) {
 			$returnString.="<div class='street_color' style='background-color: ".$colors[4]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";
@@ -82,7 +82,7 @@ function smarty_function_get_board($params, &$smarty)
 	//UNTERE REIHE
 	$returnString.="<div id='bottomRow'>";
 	for($i = 36; $i > 27; $i--) {
-		$streetIndex = $i-2;
+		$streetIndex = $i-1;
 		$returnString.="<div class='feld_".$i."' name='row2_field_".$i."'>";
 		if(in_array($i, array(28,29,31))) {
 			$returnString.="<div class='street_color' style='background-color: ".$colors[6]."'></div><div class='streetName'>".$streetNames[$streetIndex]."</div>";

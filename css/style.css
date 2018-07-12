@@ -94,3 +94,13 @@ height: 200px;
 background-color: green;
 float: right;
 }
+#tableDatabase {
+	font-size: 120%;
+	margin: 0 auto;
+	text-align: center;
+}
+#tableDatabase table{
+	margin: 0 auto;
+	text-align: center;
+	width: 40%;
+}

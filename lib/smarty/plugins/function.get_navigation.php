@@ -16,7 +16,7 @@ function smarty_function_get_navigation($params, &$smarty) {
                 <a href='../index.php'>Home</a>
             </li>
             <li>
-                <a href='../ranking.php'>Ranking</a>
+                <a href='../sites/ranking.php'>Ranking</a>
             </li>
             <li>
                 <a href='../sites/help.php'>Hilfe</a>
